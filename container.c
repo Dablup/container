@@ -70,7 +70,7 @@ int jail(void *args) {
 int main(int argc, char** argv) {
 
     printf("parent pid: %d\n", getpid());
-    clone_process(jail, CLONE_NEWPID | CLONE_NEWUTS | SIGCHLD );
+    clone_process(jail, CLONE_NEWPID | CLONE_NEWUTS | SIGCHLD | CLONE_NEWNET);
 
     return EXIT_SUCCESS;
 }
